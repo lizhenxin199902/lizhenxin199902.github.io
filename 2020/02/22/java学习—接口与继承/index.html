@@ -6,15 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://lizhenxin199902.github.io">
-  <title>java学习—接口与继承 | Hexo</title>
+  <title>Java学习-接口与继承 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
-<meta property="og:title" content="java学习—接口与继承">
+  <meta name="description" content="有关于java的学习历程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java学习-接口与继承">
 <meta property="og:url" content="http://lizhenxin199902.github.io/2020/02/22/java%E5%AD%A6%E4%B9%A0%E2%80%94%E6%8E%A5%E5%8F%A3%E4%B8%8E%E7%BB%A7%E6%89%BF/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="有关于java的学习历程">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-02-22T10:08:07.049Z">
-<meta property="article:modified_time" content="2020-02-11T09:01:24.711Z">
+<meta property="article:modified_time" content="2020-02-25T02:50:05.725Z">
 <meta property="article:author" content="liyu">
 <meta name="twitter:card" content="summary">
   
@@ -161,7 +163,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      java学习—接口与继承
+      Java学习-接口与继承
     </h1>
   
 
@@ -184,7 +186,26 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>有关于java的学习历程</p>
+<a id="more"></a>
+
+<h3 id="接口-interface"><a href="#接口-interface" class="headerlink" title="接口-interface"></a>接口-interface</h3><p>定义：public interface 名称<br>实现：implements<br>一个类可以同时实现多个接口，用逗号隔开</p>
+<h3 id="对象转型"><a href="#对象转型" class="headerlink" title="对象转型"></a>对象转型</h3><p>首先要明确引用类型和对象类型：<br>例：MyClass m = new MyClass();<br>m是引用，new MyClass()是对象;而他们有同一种类型-MyClass<br>通常情况下，引用类型和对象类型是一样的<br>当引用类型和对象类型不一致时，就需要进行类型转换</p>
+<h4 id="子类转父类（向上转型）"><a href="#子类转父类（向上转型）" class="headerlink" title="子类转父类（向上转型）"></a>子类转父类（向上转型）</h4><p>向上转型都是可以实现的，因为子类继承类父类的所有基本特性<br>例：Book b = new Book();<br>    MathBook m = new MathBook();<br>    b=m;<br>或：Book b = new MathBook();</p>
+<h4 id="父类转子类（向下转型）"><a href="#父类转子类（向下转型）" class="headerlink" title="父类转子类（向下转型）"></a>父类转子类（向下转型）</h4><p>父类转子类有时可行，有时不可行，因此必须进行强制类型转换。</p>
+<h4 id="没有继承关系的两个类是无法互相转换的"><a href="#没有继承关系的两个类是无法互相转换的" class="headerlink" title="没有继承关系的两个类是无法互相转换的"></a>没有继承关系的两个类是无法互相转换的</h4><h4 id="instanceof"><a href="#instanceof" class="headerlink" title="instanceof"></a>instanceof</h4><p>用于判断一个引用所指向的对象</p>
+<h3 id="方法重写（override）"><a href="#方法重写（override）" class="headerlink" title="方法重写（override）"></a>方法重写（override）</h3><p>子类继承父类的对象方法后，重复提供该方法，就叫做方法的重写<br>重写可以方便赋予子类特殊的功能<br>重写并不改变父类的原有方法</p>
+<h3 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h3><h4 id="操作符的多态"><a href="#操作符的多态" class="headerlink" title="操作符的多态"></a>操作符的多态</h4><p>例：+左右两边是数值型时，代表数字相加；如果左右是字符串时，代表字符串连接</p>
+<h4 id="类的多态"><a href="#类的多态" class="headerlink" title="类的多态"></a>类的多态</h4><p>多态：同一种类型，调用同一个方法，却能够呈现不同的状态<br>实现条件：<br>1、父类（接口）引用指向子类对象<br>2、调用的方法有重写</p>
+<h3 id="隐藏"><a href="#隐藏" class="headerlink" title="隐藏"></a>隐藏</h3><p>与重写类似，重写是子类覆盖父类的对象方法，隐藏是子类覆写父类的类方法</p>
+<h3 id="super关键字"><a href="#super关键字" class="headerlink" title="super关键字"></a>super关键字</h3><p>super可以显式调用父类的带参构造方法<br>调用父类的属性</p>
+<h3 id="Object类"><a href="#Object类" class="headerlink" title="Object类"></a>Object类</h3><p>Object是所有类的基类</p>
+<h4 id="toString-NaN"><a href="#toString-NaN" class="headerlink" title="toString()"></a>toString()</h4><p>Object中有一个toString方法，所以所有的类都会继承该方法</p>
+<h4 id="finalize"><a href="#finalize" class="headerlink" title="finalize()"></a>finalize()</h4><p>当一个对象没有任何引用指向的时候，它就满足垃圾回收的条件<br>finalize()就是垃圾回收时候调用的方法<br>该方法不需要主动调用，由虚拟机JVM调用</p>
+<h4 id="equals-amp-amp"><a href="#equals-amp-amp" class="headerlink" title="equals()&amp;&amp;=="></a>equals()&amp;&amp;==</h4><p>equals()用于判断两个对象的内容是否相同<br>==不是Object中的方法，但是可以用于判断两个引用是否指向同一个对象</p>
+<h4 id="hashCode"><a href="#hashCode" class="headerlink" title="hashCode()"></a>hashCode()</h4><p>该方法返回一个对象的哈希值</p>
+<h3 id="默认方法"><a href="#默认方法" class="headerlink" title="默认方法"></a>默认方法</h3><p>jdk8以后，接口中也可以定义具体的方法，只需要在方法前加default</p>
+
       
 
       
@@ -320,7 +341,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#接口-interface"><span class="toc-number">1.</span> <span class="toc-text">接口-interface</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#对象转型"><span class="toc-number">2.</span> <span class="toc-text">对象转型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#子类转父类（向上转型）"><span class="toc-number">2.1.</span> <span class="toc-text">子类转父类（向上转型）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#父类转子类（向下转型）"><span class="toc-number">2.2.</span> <span class="toc-text">父类转子类（向下转型）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#没有继承关系的两个类是无法互相转换的"><span class="toc-number">2.3.</span> <span class="toc-text">没有继承关系的两个类是无法互相转换的</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#instanceof"><span class="toc-number">2.4.</span> <span class="toc-text">instanceof</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方法重写（override）"><span class="toc-number">3.</span> <span class="toc-text">方法重写（override）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#多态"><span class="toc-number">4.</span> <span class="toc-text">多态</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#操作符的多态"><span class="toc-number">4.1.</span> <span class="toc-text">操作符的多态</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#类的多态"><span class="toc-number">4.2.</span> <span class="toc-text">类的多态</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#隐藏"><span class="toc-number">5.</span> <span class="toc-text">隐藏</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#super关键字"><span class="toc-number">6.</span> <span class="toc-text">super关键字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Object类"><span class="toc-number">7.</span> <span class="toc-text">Object类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#toString-NaN"><span class="toc-number">7.1.</span> <span class="toc-text">toString()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#finalize"><span class="toc-number">7.2.</span> <span class="toc-text">finalize()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#equals-amp-amp"><span class="toc-number">7.3.</span> <span class="toc-text">equals()&amp;&amp;&#x3D;&#x3D;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#hashCode"><span class="toc-number">7.4.</span> <span class="toc-text">hashCode()</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#默认方法"><span class="toc-number">8.</span> <span class="toc-text">默认方法</span></a></li></ol>
                     </div>
                 </span>
             </div>
